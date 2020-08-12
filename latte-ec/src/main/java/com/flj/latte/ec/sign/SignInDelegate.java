@@ -39,7 +39,7 @@ public class SignInDelegate extends LatteDelegate implements View.OnClickListene
     private void onClickSignIn() {
         if (checkForm()) {
             RestClient.builder()
-                    .url("http://192.168.56.1:8080/RestDataServer/api/user_profile.php")
+                    .url("http://mock.fulingjie.com/mock/data/user_profile.json")
                     .params("email", mEmail.getText().toString())
                     .params("password", mPassword.getText().toString())
                     .success(new ISuccess() {

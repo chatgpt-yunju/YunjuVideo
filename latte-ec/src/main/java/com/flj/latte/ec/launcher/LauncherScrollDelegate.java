@@ -74,7 +74,7 @@ public class LauncherScrollDelegate extends LatteDelegate implements OnItemClick
                 public void onSignIn() {
                     if (mILauncherListener != null) {
                         mILauncherListener.onLauncherFinish(OnLauncherFinishTag.SIGNED);
-                        getSupportDelegate().pop();
+//                        getSupportDelegate().pop();
                     }
                 }
 
@@ -82,7 +82,7 @@ public class LauncherScrollDelegate extends LatteDelegate implements OnItemClick
                 public void onNotSignIn() {
                     if (mILauncherListener != null) {
                         mILauncherListener.onLauncherFinish(OnLauncherFinishTag.NOT_SIGNED);
-                        getSupportDelegate().pop();
+//                        getSupportDelegate().pop();
                     }
                 }
             });

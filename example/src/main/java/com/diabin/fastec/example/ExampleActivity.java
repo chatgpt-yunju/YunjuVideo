@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.flj.latte.activities.ProxyActivity;
 import com.flj.latte.app.Latte;
 import com.flj.latte.delegates.LatteDelegate;
+import com.flj.latte.ec.launcher.LauncherDelegate;
 import com.flj.latte.ec.main.EcBottomDelegate;
 import com.flj.latte.ec.sign.ISignListener;
 import com.flj.latte.ec.sign.SignInDelegate;
@@ -46,12 +47,13 @@ public class ExampleActivity extends ProxyActivity implements
 
     @Override
     public LatteDelegate setRootDelegate() {
-        return new EcBottomDelegate();
+        return new LauncherDelegate();
     }
 
     @Override
     public void onSignInSuccess() {
         Toast.makeText(this, "登录成功", Toast.LENGTH_LONG).show();
+//        getSupportDelegate().startWithPop(new EcBottomDelegate());
     }
 
     @Override
