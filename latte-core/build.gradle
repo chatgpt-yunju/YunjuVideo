@@ -24,6 +24,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    //Bmob
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -74,4 +76,11 @@ dependencies {
     api 'io.reactivex.rxjava2:rxjava:2.1.13'
     api 'io.reactivex.rxjava2:rxandroid:2.0.2'
     api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    //Bmob
+    implementation 'cn.bmob.android:bmob-sdk:3.7.8'
+    implementation "io.reactivex.rxjava2:rxjava:2.2.8"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.1'
+    implementation 'com.squareup.okio:okio:2.2.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
 }

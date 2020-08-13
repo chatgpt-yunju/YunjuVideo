@@ -39,7 +39,7 @@ public class SignUpDelegate extends LatteDelegate {
     private void onClickSignUp() {
         if (checkForm()) {
             RestClient.builder()
-                    .url("http://192.168.56.1:8080/RestDataServer/api/user_profile.php")
+                    .url("http://mock.fulingjie.com/mock/data/user_profile.json")
                     .params("name", mName.getText().toString())
                     .params("email", mEmail.getText().toString())
                     .params("phone", mPhone.getText().toString())
@@ -49,6 +49,7 @@ public class SignUpDelegate extends LatteDelegate {
                         public void onSuccess(String response) {
                             LatteLogger.json("USER_PROFILE", response);
                             SignHandler.onSignUp(response, mISignListener);
+                            
                         }
                     })
                     .build()
