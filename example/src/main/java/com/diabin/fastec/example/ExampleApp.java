@@ -14,6 +14,7 @@ import com.flj.latte.util.callback.CallbackType;
 import com.flj.latte.util.callback.IGlobalCallback;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 
+import cn.bmob.v3.Bmob;
 import cn.jpush.android.api.JPushInterface;
 
 /**
@@ -36,9 +37,12 @@ public class ExampleApp extends Application {
                 .withWebEvent("test", new TestEvent())
                 .withWebEvent("share", new ShareEvent())
                 //添加Cookie同步拦截器
-                .withWebHost("https://www.baidu.com/")
+                .withWebHost("https://yunjunet.52msr.cn/")
                 .withInterceptor(new AddCookieInterceptor())
                 .configure();
+
+        //初始化Bmob
+        Bmob.initialize(this, "Your Application ID");
 
         //开启极光推送
         JPushInterface.setDebugMode(true);

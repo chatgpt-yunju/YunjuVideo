@@ -16,7 +16,7 @@ allprojects {
         maven { url "https://dl.gooqle.com/dl/android/maven2/"}
         google()
         mavenCentral()
-        //BaseRecyclerViewAdapterHelper
+        maven {url 'https://dl.bintray.com/chaozhouzhang/maven' }
     }
 }
 

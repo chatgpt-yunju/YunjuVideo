@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.diabin.latte.ec.R;
 import com.flj.latte.delegates.LatteDelegate;
+import com.flj.latte.ec.launcher.LauncherDelegate;
 import com.flj.latte.ec.main.personal.address.AddressDelegate;
 import com.flj.latte.ec.main.personal.list.ListAdapter;
 import com.flj.latte.ec.main.personal.list.ListBean;
@@ -64,9 +65,18 @@ public class SettingsDelegate extends LatteDelegate {
                 .setText("关于")
                 .build();
 
+        final ListBean loginout = new ListBean.Builder()
+                .setItemType(ListItemType.ITEM_NORMAL)
+                .setId(3)
+                .setDelegate(new AboutDelegate())
+                .setText("退出登录")
+                .build();
+
         final List<ListBean> data = new ArrayList<>();
         data.add(push);
         data.add(about);
+        data.add(loginout);
+
 
         //设置RecyclerView
         final LinearLayoutManager manager = new LinearLayoutManager(getContext());
