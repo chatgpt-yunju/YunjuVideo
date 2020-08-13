@@ -21,6 +21,15 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_settings"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/login_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="退出登录"
+        android:gravity="center"
+        android:background="#BEBEBE"
+        />
 
 </android.support.v7.widget.LinearLayoutCompat>
