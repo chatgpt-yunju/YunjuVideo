@@ -75,6 +75,7 @@ public class LauncherScrollDelegate extends LatteDelegate implements OnItemClick
                     if (mILauncherListener != null) {
                         mILauncherListener.onLauncherFinish(OnLauncherFinishTag.SIGNED);
 //                        getSupportDelegate().pop();
+
                     }
                 }
 

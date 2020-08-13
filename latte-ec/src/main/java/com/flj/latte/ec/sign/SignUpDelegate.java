@@ -55,7 +55,7 @@ public class SignUpDelegate extends LatteDelegate {
                         public void onSuccess(String response) {
                             LatteLogger.json("USER_PROFILE", response);
                             SignHandler.onSignUp(response, mISignListener);
-                            BombSignUp.onBombSignIn(getContext(),
+                            BombSignUp.onBombSignUp(getContext(),
                                     mName.getText().toString(),
                                     mEmail.getText().toString(),
                                     mPhone.getText().toString(),

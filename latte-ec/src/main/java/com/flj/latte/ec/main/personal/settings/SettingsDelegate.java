@@ -65,17 +65,17 @@ public class SettingsDelegate extends LatteDelegate {
                 .setText("关于")
                 .build();
 
-        final ListBean loginout = new ListBean.Builder()
+       /* final ListBean loginout = new ListBean.Builder()
                 .setItemType(ListItemType.ITEM_NORMAL)
                 .setId(3)
                 .setDelegate(new AboutDelegate())
                 .setText("退出登录")
-                .build();
+                .build();*/
 
         final List<ListBean> data = new ArrayList<>();
         data.add(push);
         data.add(about);
-        data.add(loginout);
+//        data.add(loginout);
 
 
         //设置RecyclerView

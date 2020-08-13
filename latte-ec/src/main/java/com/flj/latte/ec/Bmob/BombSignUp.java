@@ -14,12 +14,12 @@ import cn.bmob.v3.listener.SaveListener;
 
 public class BombSignUp {
 
-    public static void onBombSignIn(Context context, String name, String mail, String phone, String password) {
+    public static void onBombSignUp(Context context, String name, String mail, String phone, String password) {
         BmobUser bmobUser = new BmobUser();
         bmobUser.setUsername(name);
         bmobUser.setEmail(mail);
         bmobUser.setMobilePhoneNumber(phone);
-        bmobUser.setPassword(phone);
+        bmobUser.setPassword(password);
         bmobUser.signUp(new SaveListener<Object>() {
             @Override
             public void done(Object o, BmobException e) {
