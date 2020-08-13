@@ -7,12 +7,18 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Toast;
 
 import com.diabin.latte.ec.R;
 import com.flj.latte.delegates.LatteDelegate;
+import com.flj.latte.ec.Bmob.BombSignUp;
+import com.flj.latte.ec.Bmob.Person;
 import com.flj.latte.net.RestClient;
 import com.flj.latte.net.callback.ISuccess;
 import com.flj.latte.util.log.LatteLogger;
+
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 /**
  * Created by 傅令杰 on 2017/4/22
@@ -49,7 +55,11 @@ public class SignUpDelegate extends LatteDelegate {
                         public void onSuccess(String response) {
                             LatteLogger.json("USER_PROFILE", response);
                             SignHandler.onSignUp(response, mISignListener);
-                            
+                            BombSignUp.onBombSignIn(getContext(),
+                                    mName.getText().toString(),
+                                    mEmail.getText().toString(),
+                                    mPhone.getText().toString(),
+                                    mPassword.getText().toString());
                         }
                     })
                     .build()

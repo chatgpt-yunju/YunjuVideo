@@ -17,6 +17,11 @@ import com.flj.latte.util.log.LatteLogger;
 import com.flj.latte.wechat.LatteWeChat;
 import com.flj.latte.wechat.callbacks.IWeChatSignInCallback;
 
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
+
 
 /**
  * Created by 傅令杰 on 2017/4/22
@@ -47,6 +52,13 @@ public class SignInDelegate extends LatteDelegate implements View.OnClickListene
                         public void onSuccess(String response) {
                             LatteLogger.json("USER_PROFILE", response);
                             SignHandler.onSignIn(response, mISignListener);
+                            BmobUser userlogin=new BmobUser();
+                            userlogin.login(new SaveListener<Object>() {
+                                @Override
+                                public void done(Object o, BmobException e) {
+
+                                }
+                            });
                         }
                     })
                     .build()
