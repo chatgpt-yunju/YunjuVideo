@@ -68,7 +68,7 @@ public class IndexDelegate extends BottomItemDelegate implements View.OnFocusCha
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final Toolbar toolbar = view.findViewById(R.id.tb_index);
-        toolbar.getBackground().setAlpha(0);
+        toolbar.getBackground().mutate().setAlpha(0);
     }
 
     //TODO:测试方法，没啥卵用

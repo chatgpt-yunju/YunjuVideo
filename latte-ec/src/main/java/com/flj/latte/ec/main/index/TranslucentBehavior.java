@@ -57,7 +57,7 @@ public final class TranslucentBehavior extends CoordinatorLayout.Behavior<Toolba
         final int endOffset = context.getResources().getDimensionPixelOffset(R.dimen.header_height) + MORE;
         mOffset += dyConsumed;
         if (mOffset <= startOffset) {
-            toolbar.getBackground().setAlpha(0);
+            toolbar.getBackground().mutate().setAlpha(0);
         } else if (mOffset > startOffset && mOffset < endOffset) {
             final float percent = (float) (mOffset - startOffset) / endOffset;
             final int alpha = Math.round(percent * 255);
