@@ -71,7 +71,7 @@ public class ExampleActivity extends ProxyActivity implements
                 break;
             case NOT_SIGNED:
 //                Toast.makeText(this, "启动结束，用户没登录", Toast.LENGTH_LONG).show();
-                getSupportDelegate().startWithPop(new SignInDelegate());
+                getSupportDelegate().startWithPop(new EcBottomDelegate());
                 break;
             default:
                 break;

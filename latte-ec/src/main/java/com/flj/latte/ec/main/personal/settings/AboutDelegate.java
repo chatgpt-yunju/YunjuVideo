@@ -34,7 +34,7 @@ public class AboutDelegate extends LatteDelegate {
                     @Override
                     public void onSuccess(String response) {
                         final String info = JSON.parseObject(response).getString("data");
-                        textView.setText(info);
+                        textView.setText("当前版本为v1.0，最新版本为1.0，如需更新APP加入云炬视频QQ群1057515310下载最新版");
                     }
                 })
                 .build()

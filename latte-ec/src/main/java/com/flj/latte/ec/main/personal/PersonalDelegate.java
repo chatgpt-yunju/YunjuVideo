@@ -7,10 +7,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.diabin.latte.ec.R;
 import com.flj.latte.app.AccountManager;
+import com.flj.latte.app.IUserChecker;
 import com.flj.latte.delegates.bottom.BottomItemDelegate;
+import com.flj.latte.ec.launcher.LauncherDelegate;
 import com.flj.latte.ec.main.personal.address.AddressDelegate;
 import com.flj.latte.ec.main.personal.list.ListAdapter;
 import com.flj.latte.ec.main.personal.list.ListBean;
@@ -19,9 +23,12 @@ import com.flj.latte.ec.main.personal.order.OrderListDelegate;
 import com.flj.latte.ec.main.personal.profile.UserProfileDelegate;
 import com.flj.latte.ec.main.personal.settings.SettingsDelegate;
 import com.flj.latte.ec.sign.SignInDelegate;
+import com.flj.latte.ui.launcher.OnLauncherFinishTag;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.bmob.v3.BmobUser;
 
 /**
  * Created by 傅令杰
@@ -60,6 +67,14 @@ public class PersonalDelegate extends BottomItemDelegate {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
+        final TextView musrname=$(R.id.tv_usr_name);
+        if (BmobUser.isLogin()){
+            BmobUser bmobuser = BmobUser.getCurrentUser(BmobUser.class);
+            String bmobusername = (String) BmobUser.getObjectByKey("username");
+            musrname.setText(bmobusername);
+        }else{
+            musrname.setText("游客账号");
+        }
 
         final RecyclerView rvSettings = $(R.id.rv_personal_setting);
         $(R.id.tv_all_order).setOnClickListener(new View.OnClickListener() {
@@ -71,7 +86,17 @@ public class PersonalDelegate extends BottomItemDelegate {
         $(R.id.img_user_avatar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onClickAvatar();
+                AccountManager.checkAccount(new IUserChecker() {
+                    @Override
+                    public void onSignIn() {
+                        onClickAvatar();
+                    }
+                    @Override
+                    public void onNotSignIn() {
+                        getParentDelegate().getSupportDelegate().start(new SignInDelegate());
+//                        getSupportDelegate().startWithPop(new SignInDelegate());
+                    }
+                });
             }
         });
 

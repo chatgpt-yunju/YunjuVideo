@@ -24,12 +24,13 @@
                 android:src="@mipmap/avatar" />
 
             <TextView
+                android:id="@+id/tv_usr_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="20dp"
-                android:text="科大云炬"
+                android:text="游客账号"
                 android:textColor="@android:color/white"
                 android:textSize="16sp" />
 

@@ -1,9 +1,13 @@
 package com.flj.latte.delegates.web;
 
 import android.annotation.SuppressLint;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.widget.FrameLayout;
 
 import com.flj.latte.app.ConfigKeys;
 import com.flj.latte.app.Latte;
@@ -24,6 +28,9 @@ public abstract class WebDelegate extends LatteDelegate implements IWebViewIniti
     private String mUrl = null;
     private boolean mIsWebViewAvailable = false;
     private LatteDelegate mTopDelegate = null;
+    private View mCustomView;
+    private WebChromeClient.CustomViewCallback mCustomViewCallback;
+
 
     public WebDelegate() {
     }

@@ -29,7 +29,7 @@ public class ExampleApp extends Application {
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
                 .withLoaderDelayed(1000)
-                .withApiHost("http://mock.fulingjie.com/mock/api/")
+                .withApiHost("http://yunjunet.52msr.cn/mock/api/")
                 .withInterceptor(new DebugInterceptor("test", R.raw.test))
                 .withWeChatAppId("你的微信AppKey")
                 .withWeChatAppSecret("你的微信AppSecret")

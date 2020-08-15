@@ -1,13 +1,13 @@
-package com.flj.latte.ec.main.discover;
+package com.flj.latte.ec.main.music;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.diabin.latte.ec.R;
 import com.flj.latte.delegates.bottom.BottomItemDelegate;
 import com.flj.latte.delegates.web.WebDelegateImpl;
-import com.diabin.latte.ec.R;
 
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
@@ -16,11 +16,11 @@ import me.yokeyword.fragmentation.anim.FragmentAnimator;
  * Created by 傅令杰
  */
 
-public class DiscoverDelegate extends BottomItemDelegate {
+public class MusicDelegate extends BottomItemDelegate {
 
     @Override
     public Object setLayout() {
-        return R.layout.delegate_discover;
+        return R.layout.delegate_music;
     }
 
     @Override
@@ -30,7 +30,7 @@ public class DiscoverDelegate extends BottomItemDelegate {
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
-        final WebDelegateImpl delegate = WebDelegateImpl.create("https://yunjunet.52msr.cn/tv/");
+        final WebDelegateImpl delegate = WebDelegateImpl.create("https://www.ximalaya.com/zhubo/32582326");
         delegate.setTopDelegate(this.getParentDelegate());
         getSupportDelegate().loadRootFragment(R.id.web_discovery_container, delegate);
     }
